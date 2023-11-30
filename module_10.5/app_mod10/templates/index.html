@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Page Title Goes Here</title>
+    <meta name="description" content="Description Goes Here" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    {% if age > 18 %}
+    <h1>You are adult</h1>
+    {%else%}
+    <h1>YOu are child</h1>
+    {%endif%}
+
+    <h1>{{ text | addslashes }}</h1>
+
+    <h1>this is app home page</h1>
+    <h1>{{ list | length }}</h1>
+    <h1>{{read|add:"farhan"}}</h1>
+    <h1>{{read|capfirst}}</h1>
+    <h1>{{text| cut:"you"}}</h1>
+    <h1>{{birth| date:"D d M Y"}}</h1>
+    <h1>{{text| default:"nothing"}}</h1>
+    <h1>{{ list | dictsort:"section" }}</h1>
+    <h1>{{ text | divisibleby:"3" }}</h1>
+    <h1>{{ text | filesizeformat }}</h1>
+    <h1>{{ array | first }}</h1>
+    <h1>{{ text | join:"-" }}</h1>
+    <h1>{{ text | length }}</h1>
+    <h1>{{ text | upper }}</h1>
+    <h1>{{ string | make_list }}</h1>
+    <h1>{{ string | random }}</h1>
+    <h1>{{ read | slice:":3" }}</h1>
+    <h1>{{ slug |slugify }}</h1>
+    <h1>{{ post |time:"H:i"}}</h1>
+    <h1>{{ title |title }}</h1>
+    <h1>{{ title | wordcount }}</h1>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
