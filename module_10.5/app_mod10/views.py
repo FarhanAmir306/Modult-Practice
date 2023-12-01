@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from datetime import datetime
 # Create your views here.
-def home(request):
+def index(request):
     d={'name':'farhan',
        'age':23,
        'class':10,
@@ -19,7 +19,8 @@ def home(request):
         'string':'123',
         'slug':'This is an Example String!@#$',
         'post':datetime.now() ,
-        'title':'<h1> my FIRST post </h1>',  
+        'title':'<h1> my FIRST post </h1>', 
+        'num':6, 
         
         }
     return render(request,'index.html',d)
@@ -29,5 +30,5 @@ def about(request):
     return render(request,'about.html')
 def catagory(request):
     return render(request,'catagory.html')
-def index(request):
-    return render(request,'index.html')
+def home(request):
+    return render(request,'home.html')

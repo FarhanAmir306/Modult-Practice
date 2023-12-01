@@ -1,0 +1,46 @@
+.navbar{
+     /* background-color: #000328; */
+    background-color: rgba(204, 246, 221, 0.976);
+}
+#logo{
+    width: 80px;
+    height: auto;
+    
+}
+.navbar-nav a:hover{
+    color: red;
+}
+@media only screen and (min-width: 600px){
+
+    #logo{
+        margin-left: 200px;
+    }
+    #header_logo{
+       
+        margin-top:-10px;
+        margin-right: 100px;
+        padding: 20px;
+    }
+  
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    .banner_img img {
+        margin-top: 30px;
+    }
+}
+body{
+    background-image: url('../img/banner9.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat; 
+    height:auto;
+}
+
+
+#header_logo{
+    width:400px;
+ 
+}
+.navbar-toggler{
+    background-color: aquamarine;
+}

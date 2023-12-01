@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block section_header %}
+<div class="about_section d-flex justify-content-center align-items-center flex-wrap mt-5 gap-5">
+    <div class="right text-center text-black">
+        <h1><span class="text-danger fw-bold">FARHAN's </span>RESTURENT</h1>
+        <P>A restaurant is a business that prepares and serves <br> food and drinks to customers. Meals are generally served <br> and eaten on the premises, but many restaurants ...</P>
+       <button class="btn btn-danger">about me</button>
+    </div>
+    <div class="left">
+            <img src="{% static 'img/sale_banner.png' %}" alt="">
+    </div>
+</div>
+
+{% endblock section_header %}
