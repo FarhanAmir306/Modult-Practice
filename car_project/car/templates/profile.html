@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-grid gap-2 p-4" >
+    <a class="btn btn-primary " href="{% url 'edit' %}">Edit Profile</a>
+  </div>
+
+    <h1 class="text-center bg-warning"> Buy Details</h1>
+    <div class="d-flex flex-wrap justify-content-around">
+        {% for car in cars %}
+            <div class="card m-2" style="width: 18rem;">
+                <a href=""><img src="{{ car.image.url }}" class="card-img-top img-fluid" alt="img"></a>
+                <div class="card-body">
+                    <h4 class="card-title">Car Name: {{ car.carname }}</h4>
+                    <p class="card-text">Car Price: {{ car.carprice }}</p>
+                    <p class="card-text">Brand:   {{ car.brand.brand_name}}</p>
+                    <a href="{% url 'cardetails' car.id %}" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+  
+</div> 
+
+
+
+
+{% endblock content %}

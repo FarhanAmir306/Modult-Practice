@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{% load crispy_forms_tags %}
+{%block content%}
+	<div class="" style="width: 50%; margin:auto;">
+	  <form method="post" novaldiate class="card border-0">
+	  	{% csrf_token %}
+	    <h2 class="text-center">Create your account</h2>
+        {{form | crispy }}
+		
+		
+		<input type="submit" value="Register" class="btn btn-primary full-width">
+		<hr>
+		<p class="text-center">Already have an account? <a href="{% url 'login'%}">Login Here</a></p>
+		</form>
+	</div>
+{%endblock content%}

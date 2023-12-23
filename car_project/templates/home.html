@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="banner_section d-flex align-items-center justify-content-around">
+    <div class="right fs-5 text-center w-50">
+        <h1><span class="text-danger fw-bold">Farhan's </span> Car</h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, repellat nostrum. Corrupti nesciunt accusantium, alias dolores molestiae quibusdam eaque quo ea molestias ipsam iste sed porro, eligendi impedit eius rerum.
+    </div>
+    <div class="left">
+        <img src="{% static 'img/b1.png' %}" class="img-fluid" alt="">
+    </div>
+</div>
+
+
+
+<div class="button_section text-center py-5">
+    {% for brand in  brands %}
+    <button type="button" class="btn btn-outline-primary "><a href="{% url 'category_wise_post' brand.brand_name %}"> {{ brand.brand_name}}</a></button>
+    {% endfor %}
+</div> 
+
+<div class="d-flex flex-wrap justify-content-around">
+    {% for car in cars %}
+        <div class="card m-2" style="width: 18rem;">
+            <a href="{% url 'cardetails' car.id %}"><img src="{{ car.image.url }}" class="card-img-top img-fluid" alt="img"></a>
+            <div class="card-body">
+                <h5 class="card-title">Quantity: {{ car.quantity }}</h5>
+                <h5 class="card-title">Car Name: {{ car.carname }}</h5>
+                <p class="card-text">Car Price: {{ car.carprice }}</p>
+                <p class="card-text">Brand:   {{ car.brand.brand_name}}</p>
+                <a href="{% url 'cardetails' car.id %}" class="btn btn-primary">Details</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+
+
+

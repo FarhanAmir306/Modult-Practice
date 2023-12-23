@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{% load crispy_forms_tags %}
+{%block content%}
+	<div class="center">
+	  <form method="post" novaldiate class="card p-5  border-0" style="width:50%; margin:auto;">
+	  	{% csrf_token %}
+	    <h2 class="text-center">Edit Profile</h2>
+        {{form | crispy }}
+	    {% if form.errors %}
+	        <small class="error">{{ form.errors | striptags  }}</small> 
+	    {% endif %}
+		
+		<input type="submit" value="Update" class="btn btn-primary full-width">
+		<hr>
+		<p class="text-center">Already have an account? <a href="{% url 'login'%}">Login Here</a></p>
+		</form>
+	</div>
+{%endblock content%}
