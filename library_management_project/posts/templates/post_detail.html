@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="col-12">
+    <div class="card m-2 bg-blue-200 p-4 rounded-lg">
+        <div class="card-body">
+            <img src="{{post.image.url}}" class="card-img-top" alt="..." style="width:50%;">
+            <h1 class="card-title text-3xl font-bold text-gray-800">Title: {{post.title}}</h1>
+            <p class="card-text text-lg text-gray-600">Description: {{post.description}}</p>
+            {% comment %} <p>Author: {{post.author.first_name}} {{post.author.last_name}}</p> {% endcomment %}
+            <p>
+                Category: {% for cat in post.category.all %}
+                <button class="btn btn-warning btn-sm m-2" disabled style="font-size: 14px;">
+                    {{cat.name}}
+                </button>
+                {% endfor %}
+            </p>
+
+            <button class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3">
+                <a href="{% url 'bookbuy' post.id %}" class="text-white no-underline">Buy Now</a>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="card m-2 bg-green-200 p-4 rounded-lg">
+    <h1 class="p-3 text-2xl font-bold text-gray-800">Total Comments: {{comments | length}} </h1>
+    {% for comment in comments %}
+        <div class="card-body border m-2 p-4 bg-white rounded-lg">
+            <p class="text-xl font-bold text-gray-700"><b>{{comment.name}}</b> {{comment.created_on}}</p>
+            <p class="text-lg text-gray-600">{{comment.body}}</p>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock content %}

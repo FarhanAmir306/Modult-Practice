@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mx-auto my-8 p-8 bg-green-600 border rounded-lg shadow-lg" style="width: 50%; margin: auto;">
+    <form action="" method="post" enctype="multipart/form-data" class="space-y-4">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <style>
+            /* Add border to each form field */
+            .form-group {
+                border: 1px solid #ccc;
+                padding: 8px;
+                border-radius: 4px;
+            }
+        </style>
+        <button class="bg-red-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock content %}

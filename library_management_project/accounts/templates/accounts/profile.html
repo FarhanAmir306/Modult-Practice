@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% load static %} {% comment %} {% block head_title
+%}Banking System{% endblock %} {% endcomment %} {% block content %}
+
+<div class="flex justify-center my-5">
+  <button
+    class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+  >
+    <a href="{% url 'profile_information' %}" class="text-white no-underline"
+      >Edit Your Profile Information</a
+    >
+  </button>
+</div>
+
+<div class="max-w-screen-md mx-auto">
+  <table class="min-w-full bg-white border border-gray-300">
+    <thead>
+      <tr>
+        <th class="py-2 px-4 border-b text-left bg-gray-200">ID</th>
+        <th class="py-2 px-4 border-b text-left bg-gray-200">BALANCE</th>
+        <th class="py-2 px-4 border-b text-left bg-gray-200">DATE</th>
+        <th class="py-2 px-4 border-b text-left bg-gray-200">BOOK</th>
+        <th class="py-2 px-4 border-b text-left bg-gray-200">PRICE</th>
+        <th class="py-2 px-4 border-b text-left bg-gray-200">Return PAY</th>
+        <th class="py-2 px-4 border-b text-left bg-gray-200">REVIEW</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user_account in books %}
+      <tr class="bg-gray-100">
+        <td class="py-2 px-4 border-b">{{ user_account.id }}</td>
+        <td class="py-2 px-4 border-b">{{ user_account.author.balance}}</td>
+        <td class="py-2 px-4 border-b">
+          {{ user_account.author.initial_deposite_date }}
+        </td>
+
+        <td class="py-2 px-4 border-b">{{user_account.bookname}}</td>
+        <td class="py-2 px-4 border-b">{{user_account.price}}</td>
+        <td class="py-2 px-4 border-b">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            <a href="{% url 'paymoney' user_account.id %}" class="text-white"
+              >Pay</a
+            >
+          </button>
+        </td>
+        <td class="py-2 px-4 border-b">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            <a href="{% url 'comment' user_account.id %}" class="text-white"
+              >review</a
+            >
+          </button>
+        </td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock content %}
