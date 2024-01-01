@@ -17,4 +17,4 @@ def home(request, category_slug = None): # initially dhore nicchi je category_sl
     categories = CatagoryModel.objects.all() # sob category dekhabo
     return render(request, 'index.html', {'data' : data, 'category' : categories})
 
-#comment for git
+#comment for git for try
