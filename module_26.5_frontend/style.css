@@ -1,0 +1,39 @@
+.navbar{
+    background-color: #07f49e;
+}
+a{
+    font-weight: bold;
+}
+.banner_container{
+    height: 100vh;
+    margin-top: -100px;
+    
+}
+#card_container{
+    /* height: fit-content; */
+    background: rgb(36, 142, 188);
+}
+.card img{
+    width: 250px; 
+    height: 250px; 
+    margin: auto;
+    box-shadow: 2px 4px 8px gray;
+}
+.main_button_container{
+    background: linear-gradient(90deg, hsla(152, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+    height:150px;
+    text-align: center;
+ 
+}
+#button_section{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    
+   
+}
+.single_page_style{
+    text-align: center;
+}
